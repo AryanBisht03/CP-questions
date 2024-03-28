@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	cout<<"enter the number of elements in array 1"<<endl;
+	cin>>n;
+	int m;
+	cout<<"enter the number of elements in array 2"<<endl;
+	cin>>m;
+	int arr1[n];
+	int arr2[m];
+	cout<<"enter elements of array1 "<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr1[i];
+	}
+	cout<<"enter elements of array2 "<<endl;
+	for(int i=0;i<m;i++)
+	{
+		cin>>arr2[i];
+	}
+	set<int> st;
+	for(int i=0;i<n;i++)
+	{
+		st.insert(arr1[i]);
+	}
+	
+	for(int i=0;i<m;i++)
+	{
+		st.insert(arr2[i]);
+	}
+	
+	set<int>::iterator it;
+	for(it=st.begin();it!=st.end();it++)
+	{
+		cout<<(*it)<<" ";
+	}
+	cout<<endl;
+	int mm=st.size();
+	int union_arr[mm];
+	it=st.begin();
+	for(int i=0;i<mm;i++)
+	{
+	 union_arr[i]=(*it);  
+	 it++;
+	}
+	cout<<endl;
+	for(int i=0;i<mm;i++)
+	{
+	    cout<<union_arr[i]<<" ";
+	}
+	return 0;
+}
